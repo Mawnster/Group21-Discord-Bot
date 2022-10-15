@@ -4,9 +4,12 @@ import discord
 from dotenv import load_dotenv
 
 load_dotenv()
+#token is not avialable in GIT
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-client = discord.Client()
+#intents is required for all discord versions past 1.7.3 left 
+#default for now
+client = discord.Client(intents=discord.Intents.default())
 
 @client.event
 async def on_ready():
