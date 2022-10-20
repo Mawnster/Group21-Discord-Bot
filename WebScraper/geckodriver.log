@@ -1,0 +1,13 @@
+1666241645415	geckodriver	INFO	Listening on 127.0.0.1:63660
+1666241648460	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63661" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Zachary\\AppData\\Local\\Temp\\rust_mozprofilexX3cHV"
+1666241648735	Marionette	INFO	Marionette enabled
+1666241648738	Marionette	INFO	Listening on port 63673
+Read port: 63673
+WebDriver BiDi listening on ws://127.0.0.1:63661
+1666241648832	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Zachary\\AppData\\Local\\Temp\\rust_mozprofilexX3cHV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:63661/devtools/browser/f1071cc1-1329-4992-9c61-8e694d53fb15
+JavaScript warning: https://www.trentu.ca/registrar/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/modules/pdfjs.js, line 31: NS_ERROR_FACTORY_NOT_REGISTERED: 
+JavaScript error: resource://gre/modules/pdfjs.js, line 31: NS_ERROR_FACTORY_NOT_REGISTERED: 
+1666241662492	Marionette	INFO	Stopped listening on port 63673
