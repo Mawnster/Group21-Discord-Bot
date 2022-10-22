@@ -1,0 +1,57 @@
+<p></p>
+<div class="fluid-width-video-wrapper" style="padding-top: 56.25%;"><iframe allowfullscreen="" id="Dexter Fichuk - Computer Science, student testimonial" name="Dexter Fichuk - Computer Science, student testimonial" src="https://www.youtube.com/embed/YP1oWfnyHIQ" title="Dexter Fichuk - Computer Science, student testimonial"></iframe></div>
+
+
+<p><a href="/cois/sites/trentu.ca.cois/files/documents/20170411_Dexter_Fichuk_Computing_Systems.pdf">» Download Dexter's Transcript</a></p>
+
+
+<h2>Specialization in Theoretical Computer Science</h2>
+
+
+<p>The theoretical computer scientist studies and develops software systems that interface most closely with the underlying hardware. These systems are grounded in both mathematical and non-mathematical paradigms such as object-orientation, relations, and complexity theory. Because the computer scientist bridges the gap between software and hardware systems, he or she develops applications that exploit the speed and power of digital computation, designing new models of computation and new methods of problem-solving. The Specialization in Computer Science fully prepares students to pursue graduate studies in both theoretical and applied computer science.</p>
+
+
+<p>Graduating students who have fulfilled the requirements for a single-major Honours degree in Computing Systems may apply for a Specialization in Computer Science if they have also successfully completed the following 8.0 credits:</p>
+
+
+<ul><li>3.0 COIS credits consisting of COIS 2320H, 3030H, 3050H, 3320H, 4050H, and 4100H </li>
+<li>1.0 credit from ADMN</li>
+<li>1.0 credit from AHCL, CAST, CUST, ENGL, FREN, HIST, SPAN, PHIL, or WMST</li>
+<li>1.0 credit from BIOL, CHEM, ERSC, FRSC, GEOG, or PHYS</li>
+<li>2.0 additional credits outside of COIS and MATH</li>
+</ul>
+<p>For more information, contact the program coordinator, <a href="mailto:bpatrick@trentu.ca">Brian Patrick</a>, BCS (Concordia), MSc (Queen’s), Ph.D., MBA (McGill).</p>
+
+
+<h3>Specialization in Data Analytics</h3>
+
+
+<p>Today, there is a clear trend away from single-core processors, even in contemporary desktop machines, and towards the analysis of large datasets in the realm of Big Data Science. The efficient analysis of large scientific and retail datasets will require a generation of programmers, analysts, and developers who are familiar with techniques suitable for the analysis of Big Data. The Specialization in Data Analytics provides a solid foundation in those techniques, including parallel programming, visualization, and predictive modelling.</p>
+
+
+<p>Graduating students who have fulfilled the requirements for a single-major Honours degree in Computing Systems may apply for a Specialization in Data Analytics if they have also successfully completed the following 3.5 credits:</p>
+
+
+<ul><li>4.0 COIS credits consisting of COIS 1400H, 3030H, 3510H, 3560H, 4350H, 4400H, 4470H, and 4550H</li>
+</ul>
+<p>For more information, contact the program coordinator <a href="mailto:sabinemcconnell@trentu.ca">Sabine McConnell</a>, BSc, MSc, Ph.D. (Queen’s). </p>
+
+
+<h3>Specialization in Software Engineering</h3>
+
+
+<p>The software engineer works as part of a team to design, implement, test, maintain, and document software solutions. Because these solutions are typically large and complex, the software engineer must deal on several levels of abstraction and draw on sound methodologies and practices to produce software that is correct, robust, maintainable, and extensible. The software engineer, therefore, bridges the gap between the requirements of a client and the software solution to meet those requirements. He or she must have not only technical skills but also interpersonal skills to work within the dynamics of a group. The capstone of the Specialization in Software Engineering is a full-year team project (COIS 4000Y) that exercises all phases of software development on a real-world application.</p>
+
+
+<p>Students who have fulfilled the requirements for a single-major Honours degree in Computing Systems may apply for a Specialization in Software Engineering if they have also successfully completed the following 9.0 credits:</p>
+
+
+<ul><li>4.0 COIS credits consisting of COIS 3030H, 3040H, 3050H, 3320H, 3420H, 3850H, and 4000Y</li>
+<li>1.0 credit from ADMN</li>
+<li>1.0 credit from AHCL, CAST, CUST, ENGL, FREN, HIST, HSST, PHIL, or WMST</li>
+<li>1.0 credit from BIOL, CHEM, ERSC, FRSC, GEOG, or PHYS</li>
+<li>2.0 additional credits outside of COIS and MATH </li>
+</ul>
+<p>For more information, contact the program coordinator <a href="mailto:rhurley@trentu.ca">Richard Hurley</a>, BSc (New Brunswick), Ph.D. (Waterloo).</p>
+
+

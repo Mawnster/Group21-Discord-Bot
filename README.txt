@@ -1,3 +1,5 @@
+UNDER CONSTRCUTION
+
 Web Scraper Instructions:
 
 Follow the instructions on the website below to understand how to use a VENV. The folder is setup already
