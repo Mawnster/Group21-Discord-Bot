@@ -14,7 +14,7 @@ intents.guild_messages = True
 #intents.message_content = True
 intents.members = True
 
-load_dotenv()
+load_dotenv(os.getcwd() + "..\\..\\..\\env\\.env")
 
 #token is not avialable in GIT
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -26,7 +26,7 @@ client = discord.Client(intents=intents)
 #not seen by users, displays in terminal if the bot loaded
 @client.event
 async def on_ready():
-    print(f'{client.user} Heh....It works...')
+    print(f'{client.user} TrentU Buddy... ONLINE !!!')
 
 #When someone joins the server they get a direct message  
 @client.event

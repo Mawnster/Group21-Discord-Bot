@@ -184,3 +184,56 @@ JavaScript warning: https://www.trentu.ca/registrar/sites/all/modules/jquery_upd
 JavaScript error: resource://gre/modules/pdfjs.js, line 31: NS_ERROR_FACTORY_NOT_REGISTERED: 
 JavaScript error: resource://gre/modules/pdfjs.js, line 31: NS_ERROR_FACTORY_NOT_REGISTERED: 
 1666418131961	Marionette	INFO	Stopped listening on port 58478
+1666419090440	geckodriver	INFO	Listening on 127.0.0.1:59572
+1666419093507	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59573" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Zachary\\AppData\\Local\\Temp\\rust_mozprofile8gfh9a"
+1666419093792	Marionette	INFO	Marionette enabled
+1666419093796	Marionette	INFO	Listening on port 59585
+Read port: 59585
+WebDriver BiDi listening on ws://127.0.0.1:59573
+1666419093882	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Zachary\\AppData\\Local\\Temp\\rust_mozprofile8gfh9a\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:59573/devtools/browser/8d5d8977-099e-4b33-a70e-8f8b805356d2
+JavaScript warning: https://www.trentu.ca/registrar/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/modules/pdfjs.js, line 31: NS_ERROR_FACTORY_NOT_REGISTERED: 
+JavaScript error: resource://gre/modules/pdfjs.js, line 31: NS_ERROR_FACTORY_NOT_REGISTERED: 
+1666419108189	Marionette	INFO	Stopped listening on port 59585
+1666419142831	geckodriver	INFO	Listening on 127.0.0.1:60049
+1666419145882	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60050" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Zachary\\AppData\\Local\\Temp\\rust_mozprofile2yGfwK"
+1666419146163	Marionette	INFO	Marionette enabled
+1666419146167	Marionette	INFO	Listening on port 60063
+Read port: 60063
+WebDriver BiDi listening on ws://127.0.0.1:60050
+1666419146250	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Zachary\\AppData\\Local\\Temp\\rust_mozprofile2yGfwK\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60050/devtools/browser/4e4e318a-0c3f-48d3-92eb-39292ffc5e38
+JavaScript warning: https://www.trentu.ca/registrar/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/modules/pdfjs.js, line 31: NS_ERROR_FACTORY_NOT_REGISTERED: 
+JavaScript error: resource://gre/modules/pdfjs.js, line 31: NS_ERROR_FACTORY_NOT_REGISTERED: 
+1666419160505	Marionette	INFO	Stopped listening on port 60063
+1666419229441	geckodriver	INFO	Listening on 127.0.0.1:60545
+1666419232499	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60546" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Zachary\\AppData\\Local\\Temp\\rust_mozprofileSvH5Z1"
+1666419232760	Marionette	INFO	Marionette enabled
+1666419232764	Marionette	INFO	Listening on port 60558
+WebDriver BiDi listening on ws://127.0.0.1:60546
+Read port: 60558
+1666419232917	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Zachary\\AppData\\Local\\Temp\\rust_mozprofileSvH5Z1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60546/devtools/browser/12ea1be4-97f4-4b78-958d-1177fdc57766
+JavaScript warning: https://www.trentu.ca/registrar/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/modules/pdfjs.js, line 31: NS_ERROR_FACTORY_NOT_REGISTERED: 
+JavaScript error: resource://gre/modules/pdfjs.js, line 31: NS_ERROR_FACTORY_NOT_REGISTERED: 
+1666419247034	Marionette	INFO	Stopped listening on port 60558
+1666419407433	geckodriver	INFO	Listening on 127.0.0.1:61146
+1666419410512	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61147" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Zachary\\AppData\\Local\\Temp\\rust_mozprofile2bVIug"
+1666419410768	Marionette	INFO	Marionette enabled
+1666419410772	Marionette	INFO	Listening on port 61159
+WebDriver BiDi listening on ws://127.0.0.1:61147
+Read port: 61159
+1666419410976	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Zachary\\AppData\\Local\\Temp\\rust_mozprofile2bVIug\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61147/devtools/browser/31e45bf1-a9c5-456d-b4f5-571d11343772
+JavaScript warning: https://www.trentu.ca/registrar/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/modules/pdfjs.js, line 31: NS_ERROR_FACTORY_NOT_REGISTERED: 
+JavaScript error: resource://gre/modules/pdfjs.js, line 31: NS_ERROR_FACTORY_NOT_REGISTERED: 
+1666419424918	Marionette	INFO	Stopped listening on port 61159
+!!! error running onStopped callback: TypeError: callback is not a function
