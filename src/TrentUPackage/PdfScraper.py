@@ -8,9 +8,9 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.options import Options
 
-#Gets cwd so that on any machine it will download the file directly to 
-PDF_Directory = os.getcwd() + "..\\..\\data"
-
+#this is so that no matter the machine the path will still be the data folder in project root
+PDF_Directory = os.getcwd() + "..\\..\\..\\data"
+print(PDF_Directory)
 #changing the options to allow for chrome to download the file to the CWD instead of opening it
 #adapted from https://stackoverflow.com/questions/53998690/downloading-a-pdf-using-selenium-chrome-and-python
 options = Options()
@@ -46,7 +46,7 @@ for file in os.listdir(PDF_Directory):
         os.rename(PDF_Directory + "\\" + file, PDF_Directory + "\\" + "TrentUAC.pdf")
         
 # Open the pdf file
-pdf_Original = PyPDF2.PdfFileReader(os.getcwd() + '..\\..\\data\\TrentUAC.pdf', strict=False)
+pdf_Original = PyPDF2.PdfFileReader(PDF_Directory + '\\TrentUAC.pdf', strict=False)
 
 # Get number of pages to ensure we iterate the entire pdf (breaking after a few 100 pages otherwies)
 numPages = pdf_Original.getNumPages()
@@ -67,7 +67,7 @@ for i in range(0, numPages):
     #searching two strongs to try and narrow down the information
     if re.search(title_String,pdf_Page_Text):
         if re.search(narrow_String, pdf_Page_Text):
-            append_Text = io.open(os.getcwd() + "..\\..\\data\\UAC_CS.txt", "w")
+            append_Text = io.open(PDF_Directory + '\\UAC_CS.txt', 'w')
             #Remove all ascii characters to only get text
             print(pdf_Page_Text.encode("ascii", "ignore"), file=append_Text)
             append_Text.close()
@@ -76,7 +76,7 @@ for i in range(0, numPages):
 #the start of the keyword defined in narrow_String. Afterwords appending the words to the text file
 #It will also check for \n character which denote a newline and remove them, but also adding the
 #newline to the new file for readbility and further processing.            
-with open(os.getcwd() + "..\\..\\data\\UAC_CS.txt", "r") as input_File, open(os.getcwd() + "..\\..\\data\\Formatted_UAC.txt", "w") as output_File:
+with open(PDF_Directory + '\\UAC_CS.txt', 'r') as input_File, open(PDF_Directory + '\\Formatted_UAC.txt', 'w') as output_File:
     for line in input_File:
         for word in line.split():
             #create a flag to cut all the leading information off the text to further
