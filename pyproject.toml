@@ -10,18 +10,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "trentubuddy"
-version = "0.0.4"
+version = "0.0.6"
 dependencies = [
-    "discord",
-    "dotenv",
-    "selenium",
-    "bs4",
-    "webdriver_manager",
-    "PyPDF2",
+    "discord >= 2.0.0",
+    "python-dotenv >= 0.21.0",
+    "selenium >= 4.5.0",
+    "bs4 >= 0.0.1",
+    "webdriver_manager >=3.8.4",
+    "PyPDF2 >= 2.11.1",
 ]
 
 requires-python = ">=3.10.8"
-
-
-[project.scripts]
-trentubuddy = "trentubuddy.bot"

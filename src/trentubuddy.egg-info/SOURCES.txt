@@ -7,6 +7,5 @@ src/trentubuddy/websitescraper.py
 src/trentubuddy.egg-info/PKG-INFO
 src/trentubuddy.egg-info/SOURCES.txt
 src/trentubuddy.egg-info/dependency_links.txt
-src/trentubuddy.egg-info/entry_points.txt
 src/trentubuddy.egg-info/requires.txt
 src/trentubuddy.egg-info/top_level.txt
