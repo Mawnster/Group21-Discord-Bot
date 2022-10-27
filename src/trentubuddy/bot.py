@@ -13,7 +13,7 @@ intents.guild_messages = True
 #intents.message_content = True
 intents.members = True
 
-load_dotenv(os.getcwd() + "..\\..\\..\\env\\.env")
+load_dotenv(os.getcwd() + "\\env\\.env")
 
 #token is not avialable in GIT
 TOKEN = os.getenv('DISCORD_TOKEN')
