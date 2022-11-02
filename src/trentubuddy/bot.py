@@ -1,9 +1,16 @@
 # bot.py
 # Skeleton code obtained from realpython.com - see sources
+# added in extra lines from discord.ext import commands
 import discord
 import os
 import random
+from discord.ext import commands
 from dotenv import load_dotenv
+
+#Haulns on reddit comment
+intents=discord.Intents.all()
+
+client = commands.Bot(command_prefix = "!", intents=intents)
 
 #allowing for the bot to read events from messages and guilds(servers)
 #do not disbale these for now
@@ -26,6 +33,11 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
     print(f'{client.user} TrentU Buddy... ONLINE !!!')
+
+#making sure that it works with a simple hello
+@client.event
+async def hello(ctx):
+    await ctx.send("Hi there!")
 
 #When someone joins the server they get a direct message  
 @client.event
