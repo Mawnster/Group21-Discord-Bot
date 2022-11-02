@@ -7,10 +7,8 @@ import random
 from discord.ext import commands
 from dotenv import load_dotenv
 
-#Haulns on reddit comment
-intents=discord.Intents.all()
-
-client = commands.Bot(command_prefix = "!", intents=intents)
+#prefix
+client = commands.Bot(intents = discord.Intents.all(), command_prefix = '!')
 
 #allowing for the bot to read events from messages and guilds(servers)
 #do not disbale these for now
@@ -27,7 +25,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 #intents is required for all discord versions past 1.7.3 left 
 #defined above
-client = discord.Client(intents=intents)
+
 
 #not seen by users, displays in terminal if the bot loaded
 @client.event
