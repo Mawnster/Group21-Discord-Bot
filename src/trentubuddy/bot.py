@@ -23,19 +23,11 @@ load_dotenv(os.getcwd() + "\\env\\.env")
 #token is not avialable in GIT
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-#intents is required for all discord versions past 1.7.3 left 
-#defined above
-
-
 #not seen by users, displays in terminal if the bot loaded
 @client.event
 async def on_ready():
     print(f'{client.user} TrentU Buddy... ONLINE !!!')
 
-#making sure that it works with a simple hello
-@client.event
-async def hello(ctx):
-    await ctx.send("Hi there!")
 
 #When someone joins the server they get a direct message  
 @client.event
@@ -63,6 +55,11 @@ async def on_message(message):
     if 'tell me a joke' in message.content.lower():
         response = random.choice(dad_Jokes)
         await message.channel.send(response)
+
+#making sure that it works with a simple hello
+@client.event
+async def hello(ctx):
+    await ctx.send("Hi there!")
 
 
 client.run(TOKEN)
