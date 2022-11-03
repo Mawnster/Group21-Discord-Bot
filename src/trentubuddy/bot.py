@@ -8,15 +8,17 @@ from discord.ext import commands
 from dotenv import load_dotenv
 
 #prefix
-client = commands.Bot(intents = discord.Intents.all(), command_prefix = '!')
+intents = discord.Intents.default()
+intents.members = True
+bot = commands.Bot(intents = discord.Intents.all(), command_prefix = '!', help_command=None)
+
 
 #allowing for the bot to read events from messages and guilds(servers)
 #do not disbale these for now
-intents = discord.Intents.default()
-intents.guilds = True
-intents.guild_messages = True
-#intents.message_content = True
-intents.members = True
+@bot.event
+async def on_guild_join(guild):
+    if guild.system_channel:
+        await guild.system_channel.send("Test")
 
 load_dotenv(os.getcwd() + "\\env\\.env")
 
@@ -24,42 +26,53 @@ load_dotenv(os.getcwd() + "\\env\\.env")
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 #not seen by users, displays in terminal if the bot loaded
-@client.event
+@bot.event
 async def on_ready():
-    print(f'{client.user} TrentU Buddy... ONLINE !!!')
+    print(f'{bot.user} TrentU Buddy... ONLINE !!!')
 
 
 #When someone joins the server they get a direct message  
-@client.event
+@bot.event
 async def on_member_join(member):
     await member.create_dm()
     await member.dm_channel.send(
         f'Hi {member.name}, I am your student helper bot \nStarter Commands Here'
     )
 
-@client.event
-async def on_message(message):
-    #check if the message is fron a bot and if so return
-    if message.author == client.user:
-        return
-    dad_Jokes = [
-        # from https://www.countryliving.com/life/a27452412/best-dad-jokes/
-        'I\'m afraid for the calendar. Its days are numbered.',
-        'My wife said I should do lunges to stay in shape. That would be a big step forward.',
-        'Why do fathers take an extra pair of socks when they go golfing?" "In case they get a hole in one!',
-        'Singing in the shower is fun until you get soap in your mouth. Then it\'s a soap opera.',
-        'What do a tick and the Eiffel Tower have in common?" "They\'re both Paris sites.',
-        'What do you call a fish wearing a bowtie?" "Sofishticated."',
-    ]
-    
-    if 'tell me a joke' in message.content.lower():
-        response = random.choice(dad_Jokes)
-        await message.channel.send(response)
+#if user has an invalid command // shark on stack overflow // needs to be reworked
+"""
+invalid_command = #userinput
 
-#making sure that it works with a simple hello
-@client.event
+command_list = [#list of your commands]
+fuzzy_ratios = []
+for command in command_list:
+   ratio = fuzzywuzzy.ratio(invalid_command, command)
+   fuzzy_ratios.append(ratio)
+
+max_ratio_index = fuzzy_ratios.index(max(fuzzy_ratios))
+fuzzy_matched = command_list[max_ratio_index]
+
+return f"did you mean {fuzzy_matched}?"
+
+"""
+
+#making sure that it works with a simple hello - WORKING 11/
+@bot.command()
 async def hello(ctx):
     await ctx.send("Hi there!")
 
+#will a goodbye work?
+@bot.command()
+async def goodbye(ctx):
+    await ctx.send("pls come back")
 
-client.run(TOKEN)
+#roles, opens up new channels 
+
+#contacting faulty members // hardcoded
+
+#I NEED HELP
+
+
+    
+
+bot.run(TOKEN)
