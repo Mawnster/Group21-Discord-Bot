@@ -11,7 +11,7 @@ from discord.ui import Select
 #prefix
 intents = discord.Intents.default()
 intents.members = True
-bot = commands.Bot(intents = discord.Intents.all(), command_prefix = '!', help_command=None)
+bot = commands.Bot(intents = discord.Intents.all(), command_prefix = '!', help_command=None, case_insensitive=True)
 
 
 #allowing for the bot to read events from messages and guilds(servers)
@@ -82,8 +82,11 @@ async def help(ctx):
 #this is an example of different sub categories that can be in the
 #overall bot group. Will use this function for specific faculty members.
 @help.command()
-async def game(ctx):
-    await ctx.send("These are the game commands `rps`")
+async def booking(ctx):
+    await ctx.send("Here are the available commands:\n`advising`: Book with Trent's Academic Advising\n\
+`skills`: Book with Academic Skills\n`healthinmotion`: Book with Trent Health in Motion\n\
+`room`: Book a room at Trent's Peterborough campus\n`travel`: Book with Trent International\n\
+`career`: Book with Careerspace\n`peers`: Book with Peer Support\n`coop`: Book with Co-Op")
 
 #ok lets get the party started // contacting faculty
 
@@ -98,6 +101,7 @@ Jamie MITCHELL\nPeter NORTHROP\nStephen REGOCZEI\nNancy SMITH\nGraeme YOUNG\nEli
 
 # works but needs to not be case sensitive
 # creds to patrick haugh on stackoverflow
+
 @contact.command()
 async def Hurley(ctx):
     embed=discord.Embed(title="Richard Hurley", description="Department Chair and Full-Time Professor", color=0x3a8d34)
@@ -215,5 +219,73 @@ async def Other(ctx):
     embed.add_field(name="COIS Jobs", value="coisjobs@trentu.ca", inline=False)
     await ctx.send(embed=embed)
 
+#trent bookings
+## fix this it looks like shit
+@bot.group(name="book", invoke_without_command=True)
+async def book(ctx):
+    await ctx.send("**Options:**`Academic Advising`\n`Academic Skills\n\
+ `Trent Health in Motion`\n`Rooms`\n`Study Abroad`\n`Careerspace`\n\
+ `Peer Support`\n`Co-op`")
+
+@book.command()
+async def advising(ctx):
+    embed=discord.Embed(title="Academic Advising", color=0x3a8d34, url="https://ccr.trentu.ca/myAccount/aptbooking/aaadvising.htm", \
+        description="Click here to book an appointment with Academic Advising")
+    await ctx.send(embed=embed)
+
+@book.command()
+async def skills(ctx):
+    embed=discord.Embed(title="Academic Skills", color=0x3a8d34, url="https://ccr.trentu.ca/myAccount/aptbooking/asc-appt.htm", \
+        description="Click here to book an appointment with Academic Skills")
+    await ctx.send(embed=embed)
+
+@book.command()
+async def healthinmotion(ctx):
+    embed=discord.Embed(title="Trent Health in Motion", color=0x3a8d34, url="https://trenthealthinmotion.janeapp.com/#/list", \
+        description="Click here to book an appointment with Trent Health in Motion")
+    embed.set_thumbnail(url="https://trenthealthinmotion.ca/wp-content/uploads/2018/04/slider-1.jpg")
+    await ctx.send(embed=embed)
+
+"""
+@book.command()
+async def room(ctx):
+    embed=discord.Embed(title="Room Booking", color=0x3a8d34, url="https://ccr.trentu.ca/myAccount/aptbooking/asc-appt.htm", \
+        description="Click here to book an appointment with Academic Skills")
+    await ctx.send(embed=embed)
+"""
+@book.command()
+async def travel(ctx):
+    embed=discord.Embed(title="Trent International", color=0x3a8d34, url="https://ccr.trentu.ca/myAccount/aptbooking/internationalprogramappt.htm", \
+        description="Click here to book an appointment with Trent International")
+    await ctx.send(embed=embed)
+
+@book.command()
+async def career(ctx):
+    embed=discord.Embed(title="Careerspace", color=0x3a8d34, url="https://ccr.trentu.ca/myAccount/aptbooking/ccappointments.htm", \
+        description="Click here to book an appointment with Careerspace")
+    await ctx.send(embed=embed)
+
+@book.command()
+async def peer(ctx):
+    embed=discord.Embed(title="Peer Support", color=0x3a8d34, url="https://ccr.trentu.ca/myAccount/aptbooking/PeerSupport.htm", \
+        description="Click here to book an appointment with a Peer Supporter")
+    await ctx.send(embed=embed)
+
+@book.command()
+async def coop(ctx):
+    embed=discord.Embed(title="Co-Op", color=0x3a8d34, url="https://ccr.trentu.ca/myAccount/aptbooking/co-op-appointments.htm", \
+        description="Click here to book an appointment with your Co-Op Coordinator")
+    await ctx.send(embed=embed)
+
+#Course specializations // hardcoded for now
+
+#program requirements // description of classes // 
+
+#course reccommendations?
+
+#
+
+
+#logging and storing information // tech with tim on youtube
 
 bot.run(TOKEN)
