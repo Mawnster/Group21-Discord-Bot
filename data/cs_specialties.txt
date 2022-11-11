@@ -2,7 +2,7 @@
 <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;"><iframe allowfullscreen="" id="Dexter Fichuk - Computer Science, student testimonial" name="Dexter Fichuk - Computer Science, student testimonial" src="https://www.youtube.com/embed/YP1oWfnyHIQ" title="Dexter Fichuk - Computer Science, student testimonial"></iframe></div>
 
 
-<p><a href="/cois/sites/trentu.ca.cois/files/documents/20170411_Dexter_Fichuk_Computing_Systems.pdf">» Download Dexter's Transcript</a></p>
+<p><a href="/cois/sites/trentu.ca.cois/files/documents/20170411_Dexter_Fichuk_Computing_Systems.pdf">Â» Download Dexter's Transcript</a></p>
 
 
 <h2>Specialization in Theoretical Computer Science</h2>
@@ -14,13 +14,13 @@
 <p>Graduating students who have fulfilled the requirements for a single-major Honours degree in Computing Systems may apply for a Specialization in Computer Science if they have also successfully completed the following 8.0 credits:</p>
 
 
-<ul><li>3.0 COIS credits consisting of COIS 2320H, 3030H, 3050H, 3320H, 4050H, and 4100H </li>
+<ul><li>3.0 COIS credits consisting of COIS 2320H, 3030H, 3050H, 3320H, 4050H, and 4100HÂ </li>
 <li>1.0 credit from ADMN</li>
 <li>1.0 credit from AHCL, CAST, CUST, ENGL, FREN, HIST, SPAN, PHIL, or WMST</li>
 <li>1.0 credit from BIOL, CHEM, ERSC, FRSC, GEOG, or PHYS</li>
 <li>2.0 additional credits outside of COIS and MATH</li>
 </ul>
-<p>For more information, contact the program coordinator, <a href="mailto:bpatrick@trentu.ca">Brian Patrick</a>, BCS (Concordia), MSc (Queen’s), Ph.D., MBA (McGill).</p>
+<p>For more information, contact the program coordinator, <a href="mailto:bpatrick@trentu.ca">Brian Patrick</a>, BCS (Concordia), MSc (Queenâ€™s), Ph.D., MBA (McGill).</p>
 
 
 <h3>Specialization in Data Analytics</h3>
@@ -32,9 +32,9 @@
 <p>Graduating students who have fulfilled the requirements for a single-major Honours degree in Computing Systems may apply for a Specialization in Data Analytics if they have also successfully completed the following 3.5 credits:</p>
 
 
-<ul><li>4.0 COIS credits consisting of COIS 1400H, 3030H, 3510H, 3560H, 4350H, 4400H, 4470H, and 4550H</li>
+<ul><li>4.0Â COIS credits consisting of COIS 1400H,Â 3030H, 3510H, 3560H, 4350H, 4400H, 4470H, and 4550H</li>
 </ul>
-<p>For more information, contact the program coordinator <a href="mailto:sabinemcconnell@trentu.ca">Sabine McConnell</a>, BSc, MSc, Ph.D. (Queen’s). </p>
+<p>For more information, contact the program coordinator <a href="mailto:sabinemcconnell@trentu.ca">Sabine McConnell</a>, BSc, MSc, Ph.D. (Queenâ€™s).Â </p>
 
 
 <h3>Specialization in Software Engineering</h3>
@@ -50,7 +50,7 @@
 <li>1.0 credit from ADMN</li>
 <li>1.0 credit from AHCL, CAST, CUST, ENGL, FREN, HIST, HSST, PHIL, or WMST</li>
 <li>1.0 credit from BIOL, CHEM, ERSC, FRSC, GEOG, or PHYS</li>
-<li>2.0 additional credits outside of COIS and MATH </li>
+<li>2.0 additional credits outside of COIS and MATHÂ </li>
 </ul>
 <p>For more information, contact the program coordinator <a href="mailto:rhurley@trentu.ca">Richard Hurley</a>, BSc (New Brunswick), Ph.D. (Waterloo).</p>
 

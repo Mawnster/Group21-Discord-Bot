@@ -16,9 +16,6 @@
 #unordered list we extract the header for the title and every instance of a <li> item for the
 #Rquiremnets. Usinga  regex function to strip the html tags we store the data and at the end
 #of every list we create and append a node. Continuing untill there are no lines left. 
-
-#comments are intented to be long and descriptive for showing off to non-tech individuals
-
 #------
 #-Main-
 #------
@@ -28,6 +25,7 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.options import Options
+from sys import platform
 import re
 
 
@@ -103,13 +101,17 @@ TAG_RE = re.compile(r'<[^>]+>')
 def remove_tags(text):
     return TAG_RE.sub('', text)
 
-#printing every line to a text file. This is due to errors reading the div container so 
-#we put it in a text file to later iterate over 
-with open('..\\..\\data\\Html_text.txt', 'w') as test:
+if(platform == 'linux'):
+    cs_specialties = "./data/cs_specialties.txt"
+else:
+    cs_specialties = "..\\..\\data\\cs_specialties.txt"
+
+#saving the entire contents of what is being scraped for viewing. Also helped clear up parsing errors by converting to text first
+with open(cs_specialties, 'w') as write_to_file:
     for html_Tags in div_Container:   
         for html_Line in html_Tags:
-            print(html_Line,file=test)
-test.close()
+            print(html_Line,file=write_to_file)
+write_to_file.close()
 
 #Declare the linked list 
 specialty_Linked_List = Specialty_List()
@@ -122,8 +124,8 @@ specialty_Linked_List = Specialty_List()
 #keep appending that line and subsquent lines to a string until theres no more <li> tags. 
 #Following that we create a node and append it to the linked list and it searches for the next
 #header tag
-with open('..\\..\\data\\Html_text.txt', 'r') as test2:
-    for line in test2:
+with open(cs_specialties, 'r') as read_file:
+    for line in read_file:
         for header in specialty_Header_Tag:
             if header in line:
                 specialty_Title = remove_tags(line)
@@ -135,7 +137,7 @@ with open('..\\..\\data\\Html_text.txt', 'r') as test2:
             temp_Node = Specialty(specialty_Title, specialty_Requirements)
             specialty_Linked_List.instert(temp_Node)
             specialty_List_Found = False                    
-test2.close()
+read_file.close()
 
 driver.close()
 

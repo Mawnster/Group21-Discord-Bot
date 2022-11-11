@@ -7,6 +7,7 @@ import random
 from discord.ext import commands
 from dotenv import load_dotenv
 from discord.ui import Select
+from sys import platform
 
 #prefix
 intents = discord.Intents.default()
@@ -21,12 +22,16 @@ async def on_guild_join(guild):
     if guild.system_channel:
         await guild.system_channel.send("Test")
 
-load_dotenv(os.getcwd() + "\\env\\.env")
+#Path based on OS. getcwd gets the root of the project folder
+if(platform == "linux"):
+    env_path = "/env/.env"
+else:
+    env_path = "\\env\\.env"
+load_dotenv(os.getcwd() + env_path)
 
-#token is not avialable in GIT
+#token defined in .env
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-#not seen by users, displays in terminal if the bot loaded
 @bot.event
 async def on_ready():
     print(f'{bot.user} TrentU Buddy... ONLINE !!!')
@@ -90,7 +95,7 @@ async def booking(ctx):
 
 #ok lets get the party started // contacting faculty
 
-@bot.group(name="contact", invoke_without_command=True)
+@bot.group(name="contact", invoke_without_command=True, case_insensitive=True)
 async def contact(ctx):
     await ctx.send("**COIS Faculty Members\nList Updated: November 08/22\n\
 **To access information, please type prefix '!' followed by contact and the LAST name of the\
@@ -219,7 +224,7 @@ async def Other(ctx):
     embed.add_field(name="COIS Jobs", value="coisjobs@trentu.ca", inline=False)
     await ctx.send(embed=embed)
 
-#trent bookings
+#tprent bookings
 ## fix this it looks like shit
 @bot.group(name="book", invoke_without_command=True)
 async def book(ctx):
