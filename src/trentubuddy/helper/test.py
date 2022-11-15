@@ -4,6 +4,7 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.options import Options
 import re
+import json
 
 
 #Linked List Definition
@@ -96,14 +97,8 @@ test.close()
 #Declare the linked list 
 specialty_Linked_List = Specialty_List()
 
-#This loop has a series of operations for cleaning up the data we just created in the text file
-#the format on every programs specialty page was <header> <p> <p> <ul> <p> and the data we want
-#is only in he header tags coupled with that is below in the unordered list
-#we check if any header tag is present(this is due to some pages having different header tags)
-#and if so we save that to a string. Following along when we find a <li> take we continuously
-#keep appending that line and subsquent lines to a string until theres no more <li> tags. 
-#Following that we create a node and append it to the linked list and it searches for the next
-#header tag
+#Web page had multiple headers so check every tag Once it finds one
+#we search for the next unordered list to create a pair.
 with open('.\\WebsiteParse_Html\\Html_text.txt', 'r') as test2:
     for line in test2:
         for header in specialty_Header_Tag:
@@ -119,5 +114,17 @@ with open('.\\WebsiteParse_Html\\Html_text.txt', 'r') as test2:
             specialty_List_Found = False                    
 test2.close()
 
+#make a dict to save to json
+specialty_dictionary = {}
+temp_Node = specialty_Linked_List.head
+
+while(temp_Node):
+    specialty_dictionary.update({temp_Node.data.title:temp_Node.data.requirements})
+    temp_Node = temp_Node.next
+
+with open("./data/specialties.json", "w") as file:
+    print("here")
+    json.dump(specialty_dictionary, file, indent=4)
+
 #To show the output
-specialty_Linked_List.printList()
+#specialty_Linked_List.printList()

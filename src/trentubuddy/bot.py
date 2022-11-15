@@ -1,26 +1,27 @@
 # bot.py
-# Skeleton code obtained from realpython.com - see sources
-# added in extra lines from discord.ext import commands
+# Authors: Zachary Bricknell, Kenzie A
+# 
+# Desc: This bot is created to utilize the discord.py plugin to assist students in
+# finding general information. This is achieved by using web scrapers to compile data
+# and display a formatted output of the results. Utilizing Cogs to get those scripts 
+# and creating helper functions for both linux and unix systems to run the bot.
 
-#Custom scripts to allow linux support
 import helper.cross_platform as cp
 import discord
 import os
-import random
 import asyncio
 from discord.ext import commands
 from dotenv import load_dotenv
 from discord.ui import Select
 
-#prefix
+#Bot options
 intents = discord.Intents.default()
 intents.members = True
 bot = commands.Bot(intents = discord.Intents.all(), command_prefix = '!', help_command=None, case_insensitive=True)
 
-#Gets the project root and uses the helper function(if linux) to find the .env file and save
+#get the enviornment variable file
 load_dotenv(os.getcwd() + cp.os_path_helper("\\env\\.env"))
 
-#token defined in .env
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 @bot.command()
@@ -38,14 +39,8 @@ async def load_extensions(extensions_path, folder_path = "" ):
             await load_extensions(extensions_path + cp.os_path_helper("\\") + filename, folder_path + "." + filename)
         if filename.endswith('.py'):    
             #remove .py for each filename         
-            print(f'{folder_path}.{filename[:-3]}')
-            await bot.load_extension(f'{folder_path}.{filename[:-3]}')
+            await bot.load_extension(f'{folder_path}.{filename[:-3]}')        
             
-        
-    
-
-
-
 #if user has an invalid command // shark on stack overflow // needs to be reworked
 """
 invalid_command = #userinput
