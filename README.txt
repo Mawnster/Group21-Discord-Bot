@@ -1,26 +1,29 @@
-UNDER CONSTRCUTION
+Project created and maintained by Zachary B and Kenzie A
 
-Web Scraper Instructions:
+##Description##
 
-Follow the instructions on the website below to understand how to use a VENV. The folder is setup already
-so you just need to activate or deactivate when needed. 
-https://realpython.com/python-virtual-environments-a-primer/
-(Since I have already set it up you may not need to do this but i suggest you understand it at least)
+This discord bot utilizes popular frameworks such as discord.py, cogs, selenium and beautiful soup. The goal is to create a faster and more convenient way to navigate and retrieve informationf from "trentu.ca". 
 
-Now when in visual studio code when you run a script for the first time it will ask you to select an interpreter
-make sure its the one that says ("VirtualPython":venv) Where virtual python is the name i gave it.
+Using senenium and beautiful soup 4 we can parse HTML from the website and retrieve information. The information retrieved is dynamic so it will grab any information updated by JS. It saves this file as a dictionary and dumps it into a .json file for the bot to grab later
 
-Now you should be able to run scripts in vs code and use libraries without installing them directly on your pc
+The bot file will call multiple script files for listeners, commands and if needed to run the script to update the .json files as need. It will then display the information in a readable embed for the user.
 
-if you have issues running the activate script in terminal use this link to make your terminal in admin mode
-https://www.groovypost.com/howto/open-powershell-as-admin-on-windows-11/#:~:text=In%20the%20Terminal%20window%2C%20press,Administrator%20switch%20and%20click%20Save.
-Then use the following command
-Set-ExecutionPolicy RemoteSigned
+We chose discord as it is a popular platform use by many people, but also cuts out the idea of remaking a website or creating a new front end. 
 
-MAKE SURE YOU DO THIS WHEN YOUR DONE ->
-Set-ExecutionPolicy Restricted
+This is a proof of concept.
 
-(CMD shouldnt have this issue)
+
+
+##Setup##
+
+Highly recomended to use a virutal enviornment for python to install packages on. We used venv.
+
+Must get a bot set up throguh discord and save the token in a file called .env and it env foler
+
+Must install dependencies which are included in the package we created using PIP
+pip install trentubuddy
+
+Currently deployable on both windows and linux systems (tested on linux mint)
 
 
 
