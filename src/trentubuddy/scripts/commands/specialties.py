@@ -3,15 +3,16 @@
 import discord
 from discord.ext import commands
 import json
+import helper.cross_platform as cp
 
 class Specialties(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot   
     
-    @commands.command()
+    @commands.command(case_insensitive=True)
     async def specialties(self, ctx):
-        file = open("./data/specialties.json")
+        file = open(cp.os_path_helper(".\\data\\specialties.json"))
         content = json.load(file)
         file.close()
         for specialty_key, specialty_value in content.items():

@@ -6,41 +6,14 @@
 # and display a formatted output of the results. Utilizing Cogs to get those scripts 
 # and creating helper functions for both linux and unix systems to run the bot.
 
-import helper.cross_platform as cp
-import discord
-import os
-import asyncio
-from discord.ext import commands
-from dotenv import load_dotenv
-from discord.ui import Select
+#Backlog:
 
-#Bot options
-intents = discord.Intents.default()
-intents.members = True
-bot = commands.Bot(intents = discord.Intents.all(), command_prefix = '!', help_command=None, case_insensitive=True)
+#program requirements // description of classes // 
 
-#get the enviornment variable file
-load_dotenv(os.getcwd() + cp.os_path_helper("\\env\\.env"))
+#course reccommendations?
 
-TOKEN = os.getenv('DISCORD_TOKEN')
+#logging and storing information // tech with tim on youtube
 
-@bot.command()
-async def load(ctx, extension):
-    await bot.load_extension(f'commands.{extension}')
-
-#recursively get every extension for every .py file in the path or subdirectories
-async def load_extensions(extensions_path, folder_path = "" ):
-    if(folder_path == ""):
-        #folder path must start at the given rirectory is located so we take the last entry of the input
-        folder_path = extensions_path.rsplit(cp.os_path_helper("\\"), 1)[-1]    
-    for filename in os.listdir(extensions_path):
-        if(os.path.isdir(os.path.join(extensions_path, filename))):
-            #recursively load in the new path with a delimiter of "." to be used in load_extension
-            await load_extensions(extensions_path + cp.os_path_helper("\\") + filename, folder_path + "." + filename)
-        if filename.endswith('.py'):    
-            #remove .py for each filename         
-            await bot.load_extension(f'{folder_path}.{filename[:-3]}')        
-            
 #if user has an invalid command // shark on stack overflow // needs to be reworked
 """
 invalid_command = #userinput
@@ -59,52 +32,49 @@ return f"did you mean {fuzzy_matched}?"
 """
 #select menu for a role // Code with Swastik on YouTube
 
-
-#making sure that it works with a simple hello - WORKING 11/
-@bot.command()
-async def hello(ctx):
-    await ctx.send("Hi there!")
-
-#will a goodbye work?
-@bot.command()
-async def goodbye(ctx):
-    await ctx.send("pls come back")
-
 #roles, opens up new channels 
 
-#help command // what are all the available functions?
 
-@bot.group(name="help", invoke_without_command=True)
-async def help(ctx):
-    await ctx.send("Here are the available commands:\n`Hello`: Say hello to the bot \
-        \n`Goodbye`: Say goodbye to the bot\n`Contact`: Contact information for COIS faculty members\n`Resources`: Links to different\
- Trent resources\n")
+import helper.cross_platform as cp
+import discord
+import os
+import asyncio
+from discord.ext import commands
+from dotenv import load_dotenv
+from discord.ui import Select
 
-#this is an example of different sub categories that can be in the
-#overall bot group. Will use this function for specific faculty members.
-@help.command()
-async def booking(ctx):
-    await ctx.send("Here are the available commands:\n`advising`: Book with Trent's Academic Advising\n\
-`skills`: Book with Academic Skills\n`healthinmotion`: Book with Trent Health in Motion\n\
-`room`: Book a room at Trent's Peterborough campus\n`travel`: Book with Trent International\n\
-`career`: Book with Careerspace\n`peers`: Book with Peer Support\n`coop`: Book with Co-Op")
+#Bot options
+intents = discord.Intents.default()
+intents.members = True
+bot = commands.Bot(intents = discord.Intents.all(), command_prefix = '!', help_command=None, case_insensitive=True)
 
+#get the enviornment variable file
+load_dotenv(os.getcwd() + cp.os_path_helper("\\env\\.env"))
 
-#Course specializations // hardcoded for now
+TOKEN = os.getenv('DISCORD_TOKEN')
 
-#program requirements // description of classes // 
+#not fully implemented 
+@bot.command()
+async def load(ctx, extension):
+    await bot.load_extension(f'commands.{extension}')
 
-#course reccommendations?
-
-#
-
-
-#logging and storing information // tech with tim on youtube
-
+#recursively get every extension for every .py file in the path or subdirectories
+async def load_extensions(extensions_path, folder_path = "" ):
+    if(folder_path == ""):
+        #folder path must start at the given rirectory is located so we take the last entry of the input
+        folder_path = extensions_path.rsplit(cp.os_path_helper("\\"), 1)[-1]    
+    for filename in os.listdir(extensions_path):
+        if(os.path.isdir(os.path.join(extensions_path, filename))):
+            #recursively load in the new path with a delimiter of "." to be used in load_extension
+            await load_extensions(extensions_path + cp.os_path_helper("\\") + filename, folder_path + "." + filename)
+        if filename.endswith('.py'):    
+            #remove .py for each filename         
+            await bot.load_extension(f'{folder_path}.{filename[:-3]}')        
+            
+#This is the new way to do bot.run(TOKEN) by loading the cogs first.
 async def main():
     async with bot:
         await load_extensions(cp.os_path_helper(".\\src\\trentubuddy\\scripts"))
         await bot.start(TOKEN)
-#bot.run(TOKEN)
 
 asyncio.run(main())     

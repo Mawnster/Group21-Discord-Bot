@@ -25,6 +25,8 @@ pip install trentubuddy
 
 Currently deployable on both windows and linux systems (tested on linux mint)
 
+the build folder is for the PYPI package
 
+the src folder is the most recent bot iteration
 
 
