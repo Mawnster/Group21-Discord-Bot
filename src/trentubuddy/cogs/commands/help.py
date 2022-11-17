@@ -3,7 +3,7 @@
 import discord
 from discord.ext import commands
 import json
-import scripts.cross_platform as cp
+import scripts.helpers as helper
 
 class Help(commands.Cog):
 

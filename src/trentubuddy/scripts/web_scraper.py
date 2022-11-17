@@ -28,48 +28,48 @@ def Store_Data(dict_to_save):
     with open("./data/specialties.json", "w") as file:
         json.dump(dict_to_save, file, indent=4)
 
-#initialize a driver with the destination url and headless option (No GUI)
-def Setup_Driver(destinationUrl):
-    options = Options()
-    driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()),options=options)
-    driver.get(destinationUrl)
-    return driver
-
 #Initialize beautiful soup as an object of the drivers page source
 def BeautifulSoupSetup(input_driver):
     return BeautifulSoup(input_driver.page_source, "html.parser")
 
-soup = BeautifulSoupSetup(Setup_Driver(url))
+def update_specialties():
+    #if theres an error the driver may stay open
+    try:
+        specialty_title = ""
+        requirements_list = []
 
-div_container = soup.find(html_container, class_ = class_tag)
+        options = Options()
+        options.headless = True
+        driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()),options=options)        
+        driver.set_page_load_timeout(5)
+        driver.get(url)   
 
-#initialize a driver with the destination url and headless option (No GUI)
-def Setup_Driver(destinationUrl):
-    options = Options()
-    driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()),options=options)
-    driver.get(destinationUrl)
-    return driver
+        soup = BeautifulSoupSetup(driver)
+        div_container = soup.find(html_container, class_ = class_tag)
 
+        for html_tag in div_container.find_all(all_tags):
+            if html_tag.name in header_tags:
+                #wait for one full iteration first
+                if specialty_title != "":
+                    results_dict[specialty_title] = requirements_list 
+                requirements_list = []                               
+                specialty_title = html_tag.contents[0]
+            #if end of loop do the last add last iteration
+            elif html_tag == div_container.find_all(all_tags)[-1]:
+                requirements_list.append(html_tag.contents[0].text)
+                results_dict[specialty_title] = requirements_list
+            else:            
+                requirements_list.append(html_tag.contents[0].text)            
+        driver.quit()
+        Store_Data(results_dict)
+        return 0
+    except:
+        print("Error... Terminating Driver")
+        driver.quit()
+        return 1
+
+#do nothing when imported until called
 def main():
-    specialty_title = ""
-    requirements_list = []
-
-    for html_tag in div_container.find_all(all_tags):
-        print(html_tag.contents[0])
-        if html_tag.name in header_tags:
-            #wait for one full iteration first
-            if specialty_title != "":
-                results_dict[specialty_title] = requirements_list 
-            requirements_list = []                               
-            specialty_title = html_tag.contents[0]
-        #if end of loop do the last add last iteration
-        elif html_tag == div_container.find_all(all_tags)[-1]:
-            requirements_list.append(html_tag.contents[0].text)
-            results_dict[specialty_title] = requirements_list
-        else:            
-            requirements_list.append(html_tag.contents[0].text)
-        
-    Store_Data(results_dict)
-    
+    pass
 if __name__ == "__main__":
     main()

@@ -3,7 +3,8 @@
 import discord
 from discord.ext import commands
 import json
-import scripts.cross_platform as cp
+import scripts.helpers as helper
+import scripts.web_scraper as scraper
 
 class Specialties(commands.Cog):
 
@@ -12,12 +13,17 @@ class Specialties(commands.Cog):
     
     @commands.command(case_insensitive=True)
     async def specialties(self, ctx):
-        file = open(cp.os_path_helper(".\\data\\specialties.json"))
+        await ctx.send("Let me get that information for you...")
+        if(helper.SinceLastModified(".\\data\\specialties.json") > 1):
+            if scraper.update_specialties() != 0:
+                await ctx.send("Error fetching information...")
+                return
+        file = open(helper.os_path_helper(".\\data\\specialties.json"))
         content = json.load(file)
         file.close()
         for specialty_key, specialty_value in content.items():
-            embed=discord.Embed(title=specialty_key, color=0x3a8d34)
-            embed.add_field(name="Requirements", value="\n".join(specialty_value), inline=False)
+            embed=discord.Embed(title=specialty_key, color=0x3a8d34)            
+            embed.add_field(name="Requirements:", value="\n\n".join(specialty_value), inline=False)
             await ctx.send(embed=embed)      
 
 #Required to add the functions
