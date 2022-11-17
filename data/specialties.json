@@ -1,5 +1,19 @@
 {
-    "Specialization in Software Engineering\n": "3.0 COIS credits consisting of COIS 2320H, 3030H, 3050H, 3320H, 4050H, and 4100H\u00a0\n1.0 credit from ADMN\n1.0 credit from AHCL, CAST, CUST, ENGL, FREN, HIST, SPAN, PHIL, or WMST\n1.0 credit from BIOL, CHEM, ERSC, FRSC, GEOG, or PHYS\n2.0 additional credits outside of COIS and MATH\n4.0\u00a0COIS credits consisting of COIS 1400H,\u00a03030H, 3510H, 3560H, 4350H, 4400H, 4470H, and 4550H\n4.0 COIS credits consisting of COIS 3030H, 3040H, 3050H, 3320H, 3420H, 3850H, and 4000Y\n1.0 credit from ADMN\n1.0 credit from AHCL, CAST, CUST, ENGL, FREN, HIST, HSST, PHIL, or WMST\n1.0 credit from BIOL, CHEM, ERSC, FRSC, GEOG, or PHYS\n2.0 additional credits outside of COIS and MATH\u00a0\n",
-    "Specialization in Data Analytics\n": "3.0 COIS credits consisting of COIS 2320H, 3030H, 3050H, 3320H, 4050H, and 4100H\u00a0\n1.0 credit from ADMN\n1.0 credit from AHCL, CAST, CUST, ENGL, FREN, HIST, SPAN, PHIL, or WMST\n1.0 credit from BIOL, CHEM, ERSC, FRSC, GEOG, or PHYS\n2.0 additional credits outside of COIS and MATH\n4.0\u00a0COIS credits consisting of COIS 1400H,\u00a03030H, 3510H, 3560H, 4350H, 4400H, 4470H, and 4550H\n",
-    "Specialization in Theoretical Computer Science\n": "3.0 COIS credits consisting of COIS 2320H, 3030H, 3050H, 3320H, 4050H, and 4100H\u00a0\n1.0 credit from ADMN\n1.0 credit from AHCL, CAST, CUST, ENGL, FREN, HIST, SPAN, PHIL, or WMST\n1.0 credit from BIOL, CHEM, ERSC, FRSC, GEOG, or PHYS\n2.0 additional credits outside of COIS and MATH\n"
+    "Specialization in Theoretical Computer Science": [
+        "3.0 COIS credits consisting of COIS 2320H, 3030H, 3050H, 3320H, 4050H, and 4100H\u00a0",
+        "1.0 credit from ADMN",
+        "1.0 credit from AHCL, CAST, CUST, ENGL, FREN, HIST, SPAN, PHIL, or WMST",
+        "1.0 credit from BIOL, CHEM, ERSC, FRSC, GEOG, or PHYS",
+        "2.0 additional credits outside of COIS and MATH"
+    ],
+    "Specialization in Data Analytics": [
+        "4.0\u00a0COIS credits consisting of COIS 1400H,\u00a03030H, 3510H, 3560H, 4350H, 4400H, 4470H, and 4550H"
+    ],
+    "Specialization in Software Engineering": [
+        "4.0 COIS credits consisting of COIS 3030H, 3040H, 3050H, 3320H, 3420H, 3850H, and 4000Y",
+        "1.0 credit from ADMN",
+        "1.0 credit from AHCL, CAST, CUST, ENGL, FREN, HIST, HSST, PHIL, or WMST",
+        "1.0 credit from BIOL, CHEM, ERSC, FRSC, GEOG, or PHYS",
+        "2.0 additional credits outside of COIS and MATH\u00a0"
+    ]
 }

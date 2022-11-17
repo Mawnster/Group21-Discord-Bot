@@ -17,31 +17,30 @@
 #if user has an invalid command // shark on stack overflow // needs to be reworked
 """
 invalid_command = #userinput
-
 command_list = [#list of your commands]
 fuzzy_ratios = []
 for command in command_list:
    ratio = fuzzywuzzy.ratio(invalid_command, command)
    fuzzy_ratios.append(ratio)
-
 max_ratio_index = fuzzy_ratios.index(max(fuzzy_ratios))
 fuzzy_matched = command_list[max_ratio_index]
-
 return f"did you mean {fuzzy_matched}?"
-
 """
 #select menu for a role // Code with Swastik on YouTube
 
 #roles, opens up new channels 
 
 
-import helper.cross_platform as cp
+import scripts.cross_platform as cp
 import discord
 import os
 import asyncio
 from discord.ext import commands
 from dotenv import load_dotenv
 from discord.ui import Select
+
+#changes \\ to / if linux system
+cog_path = cp.os_path_helper(".\\src\\trentubuddy\\cogs")
 
 #Bot options
 intents = discord.Intents.default()
@@ -74,7 +73,8 @@ async def load_extensions(extensions_path, folder_path = "" ):
 #This is the new way to do bot.run(TOKEN) by loading the cogs first.
 async def main():
     async with bot:
-        await load_extensions(cp.os_path_helper(".\\src\\trentubuddy\\scripts"))
+        await load_extensions(cog_path)
         await bot.start(TOKEN)
-
-asyncio.run(main())     
+        
+if __name__ == "__main__":
+    asyncio.run(main())  
