@@ -13,9 +13,9 @@ class Specialties(commands.Cog):
         self.bot = bot   
     
     @commands.command(case_insensitive=True)
-    async def specialties(self, ctx):
-        await ctx.send("Let me get that information for you...")
+    async def specialties(self, ctx):        
         if(helper.SinceLastModified(".\\data\\specialties.json") > 1):
+            await ctx.send("Let me get that information for you...")
             if cs_specialties.update_specialties() != 0:
                 await ctx.send("Error fetching information...")
                 return
@@ -29,18 +29,19 @@ class Specialties(commands.Cog):
 
     @commands.command(case_insensitive=True, aliases=["academiccalendar", "academic_calendar", "a_c"])
     async def ac(self, ctx):
-        await ctx.send("Let me get that information for you...")
+        delete_timer = 30.0        
         if(helper.SinceLastModified(".\\data\\ac_link.json") > 1):
+            await ctx.send("Let me get that information for you...", delete_after=delete_timer)
             if academic_calendar.get_ac_link() != 0:
-                await ctx.send("Error fetching information...")
+                await ctx.send("Error fetching information...", delete_after=delete_timer)
                 return
         file = open(helper.os_path_helper(".\\data\\ac_link.json"))
         content = json.load(file)
         file.close()
         for specialty_key, specialty_value in content.items():
-            embed=discord.Embed(title=specialty_key, color=0x3a8d34)            
-            embed.add_field(name="Link:", value=specialty_value, inline=False)
-            await ctx.send(embed=embed) 
+            embed=discord.Embed(title=specialty_key, color=0x3a8d34, url=specialty_value)            
+            await ctx.send(embed=embed, delete_after=delete_timer) 
+            #only one item in the dict
             return   
 
 #Required to add the functions
