@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.options import Options
-import re
 import json
 
 results_array = []
