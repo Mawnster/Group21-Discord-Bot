@@ -6,29 +6,6 @@
 # and display a formatted output of the results. Utilizing Cogs to get those scripts 
 # and creating helper functions for both linux and unix systems to run the bot.
 
-#Backlog:
-
-#program requirements // description of classes // 
-
-#course reccommendations?
-
-#logging and storing information // tech with tim on youtube
-
-#if user has an invalid command // shark on stack overflow // needs to be reworked
-"""
-invalid_command = #userinput
-command_list = [#list of your commands]
-fuzzy_ratios = []
-for command in command_list:
-   ratio = fuzzywuzzy.ratio(invalid_command, command)
-   fuzzy_ratios.append(ratio)
-max_ratio_index = fuzzy_ratios.index(max(fuzzy_ratios))
-fuzzy_matched = command_list[max_ratio_index]
-return f"did you mean {fuzzy_matched}?"
-"""
-#select menu for a role // Code with Swastik on YouTube
-
-#roles, opens up new channels 
 import scripts.helpers as helper
 import discord
 import os
@@ -54,7 +31,8 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 async def load(ctx, extension):
     await bot.load_extension(f'commands.{extension}')
 
-#recursively get every extension for every .py file in the path or subdirectories
+#recursively get every extension for every .py file in the path or subdirectories as well as 
+#use the apporpriate structure for cogs with a "." to join the path
 async def load_extensions(extensions_path, folder_path = "" ):
     if(folder_path == ""):
         #folder path must start at the given rirectory is located so we take the last entry of the input

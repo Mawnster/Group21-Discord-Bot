@@ -1,0 +1,24 @@
+
+#Backlog:
+
+#program requirements // description of classes // 
+
+#course reccommendations?
+
+#logging and storing information // tech with tim on youtube
+
+#if user has an invalid command // shark on stack overflow // needs to be reworked
+"""
+invalid_command = #userinput
+command_list = [#list of your commands]
+fuzzy_ratios = []
+for command in command_list:
+   ratio = fuzzywuzzy.ratio(invalid_command, command)
+   fuzzy_ratios.append(ratio)
+max_ratio_index = fuzzy_ratios.index(max(fuzzy_ratios))
+fuzzy_matched = command_list[max_ratio_index]
+return f"did you mean {fuzzy_matched}?"
+"""
+#select menu for a role // Code with Swastik on YouTube
+
+#roles, opens up new channels 
