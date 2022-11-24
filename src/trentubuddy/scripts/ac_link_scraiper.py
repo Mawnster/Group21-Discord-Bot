@@ -11,7 +11,7 @@ results_dict = {}
 url = 'https://www.trentu.ca/registrar/academic-calendar/undergraduate-calendar'
 
 def Store_Data(dict_to_save):
-    with open("./data/ac_link.json", "w") as file:
+    with open("./src/data/ac_link.json", "w") as file:
         json.dump(dict_to_save, file, indent=4)
 
 def get_ac_link():

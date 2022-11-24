@@ -24,7 +24,7 @@ all_tags = header_tags.copy()
 all_tags.update(list_tags)
 
 def Store_Data(dict_to_save):
-    with open("./data/specialties.json", "w") as file:
+    with open("./src/data/specialties.json", "w") as file:
         json.dump(dict_to_save, file, indent=4)
 
 #Initialize beautiful soup as an object of the drivers page source

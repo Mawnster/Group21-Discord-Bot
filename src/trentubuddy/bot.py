@@ -22,7 +22,7 @@ intents.members = True
 bot = commands.Bot(intents = discord.Intents.all(), command_prefix = '!', help_command=None, case_insensitive=True)
 
 #get the enviornment variable file
-load_dotenv(os.getcwd() + helper.os_path_helper("\\env\\.env"))
+load_dotenv(os.getcwd() + helper.os_path_helper("\\src\\env\\.env"))
 
 TOKEN = os.getenv('DISCORD_TOKEN')
 
@@ -47,9 +47,12 @@ async def load_extensions(extensions_path, folder_path = "" ):
             
 #This is the new way to do bot.run(TOKEN) by loading the cogs first.
 async def main():
+    await load_bot()
+
+async def load_bot():
     async with bot:
         await load_extensions(cog_path)
         await bot.start(TOKEN)
-        
+
 if __name__ == "__main__":
     asyncio.run(main())  

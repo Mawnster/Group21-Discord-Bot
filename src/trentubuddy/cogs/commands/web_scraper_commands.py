@@ -12,14 +12,18 @@ class Specialties(commands.Cog):
     def __init__(self, bot):
         self.bot = bot   
     
-    @commands.command(case_insensitive=True)
+    @commands.command()
+    async def testt(self, ctx):
+        await ctx.send("HEH TESTED...")
+
+    @commands.command(case_insensitive=True, aliases=["sp"])
     async def specialties(self, ctx):        
-        if(helper.SinceLastModified(".\\data\\specialties.json") > 1):
+        if(helper.SinceLastModified(".\\src\\data\\specialties.json") > 1):
             await ctx.send("Let me get that information for you...")
             if cs_specialties.update_specialties() != 0:
                 await ctx.send("Error fetching information...")
                 return
-        file = open(helper.os_path_helper(".\\data\\specialties.json"))
+        file = open(helper.os_path_helper(".\\src\\data\\specialties.json"))
         content = json.load(file)
         file.close()
         for specialty_key, specialty_value in content.items():
@@ -30,12 +34,12 @@ class Specialties(commands.Cog):
     @commands.command(case_insensitive=True, aliases=["academiccalendar", "academic_calendar", "a_c"])
     async def ac(self, ctx):
         delete_timer = 30.0        
-        if(helper.SinceLastModified(".\\data\\ac_link.json") > 1):
+        if(helper.SinceLastModified(".\\src\\data\\ac_link.json") > 1):
             await ctx.send("Let me get that information for you...", delete_after=delete_timer)
             if academic_calendar.get_ac_link() != 0:
                 await ctx.send("Error fetching information...", delete_after=delete_timer)
                 return
-        file = open(helper.os_path_helper(".\\data\\ac_link.json"))
+        file = open(helper.os_path_helper(".\\src\\data\\ac_link.json"))
         content = json.load(file)
         file.close()
         for specialty_key, specialty_value in content.items():
