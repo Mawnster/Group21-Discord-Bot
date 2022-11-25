@@ -4,6 +4,10 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.options import Options
 import json
+import os
+
+#To make more portable gets THIS files path and goes down a level to the data folder, This is the folder we want that contains specialties.json. If moved update this
+json_filepath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data")
 
 results_array = []
 
@@ -24,7 +28,9 @@ all_tags = header_tags.copy()
 all_tags.update(list_tags)
 
 def Store_Data(dict_to_save):
-    with open("./src/data/specialties.json", "w") as file:
+    os.path.dirname(os.path.realpath(__file__))
+    os.chdir(json_filepath)
+    with open(os.getcwd() + "/specialties.json", "w") as file:
         json.dump(dict_to_save, file, indent=4)
 
 #Initialize beautiful soup as an object of the drivers page source

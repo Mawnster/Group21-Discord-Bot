@@ -14,15 +14,15 @@ from discord.ext import commands
 from dotenv import load_dotenv
 
 #changes \\ to / if linux system
-cog_path = helper.os_path_helper(".\\src\\trentubuddy\\cogs")
+cog_path = os.path.dirname(os.path.realpath(__file__)) + helper.os_path_helper("\\cogs")
 
 #Bot options
 intents = discord.Intents.default()
 intents.members = True
 bot = commands.Bot(intents = discord.Intents.all(), command_prefix = '!', help_command=None, case_insensitive=True)
 
-#get the enviornment variable file
-load_dotenv(os.getcwd() + helper.os_path_helper("\\src\\env\\.env"))
+#get the files path (bot.py) and append the env folder for portability
+load_dotenv(os.path.dirname(os.path.realpath(__file__)) + helper.os_path_helper("\\env\\.env"))
 
 TOKEN = os.getenv('DISCORD_TOKEN')
 

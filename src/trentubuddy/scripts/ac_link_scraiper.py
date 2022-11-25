@@ -4,14 +4,16 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.options import Options
 import json
+import os
 
 #convert the array to a dict once formatted with key value pairs to save to a JSON file
 results_dict = {}
+json_filepath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data")
 
 url = 'https://www.trentu.ca/registrar/academic-calendar/undergraduate-calendar'
 
 def Store_Data(dict_to_save):
-    with open("./src/data/ac_link.json", "w") as file:
+    with open(json_filepath + "/ac_link.json", "w") as file:
         json.dump(dict_to_save, file, indent=4)
 
 def get_ac_link():
