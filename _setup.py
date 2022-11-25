@@ -6,7 +6,7 @@ setup(
     packages=["src"],
     entry_points={
         "console_scripts": [
-            "trentubuddy = src.__main__:main"
+            "trentubuddy = trentubuddy.__main__:main"
         ]
     },
 )
