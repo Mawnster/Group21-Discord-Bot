@@ -6,7 +6,7 @@
 # and display a formatted output of the results. Utilizing Cogs to get those scripts 
 # and creating helper functions for both linux and unix systems to run the bot.
 
-import scripts.helpers as helper
+from scripts import helpers as helper
 import discord
 import os
 import asyncio
@@ -49,6 +49,7 @@ async def load_extensions(extensions_path, folder_path = "" ):
 async def main():
     await load_bot()
 
+#To be called from __main__.py to execute this script.
 async def load_bot():
     async with bot:
         await load_extensions(cog_path)
