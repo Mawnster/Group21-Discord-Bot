@@ -49,6 +49,7 @@ VirtualPython
 
 #log files
 geckodriver.log*
+backlog.txt
 
 #PYPI build
 ./build
