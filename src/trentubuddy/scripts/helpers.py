@@ -9,7 +9,9 @@ def os_path_helper(path_check):
         return path_check.replace("\\", "/")
     return path_check
 
-def SinceLastModified(file_path, convert_seconds = 60):
-    file_to_check = os.stat(os_path_helper(file_path)).st_mtime
-    time_since_modified = (time.time() - file_to_check)/convert_seconds
+def SinceLastModified(file_path, divide_seconds = 1):
+    if(os.stat(file_path).st_size == 0):
+        return -1
+    file_to_check = os.stat(file_path).st_mtime
+    time_since_modified = (time.time() - file_to_check)/divide_seconds
     return time_since_modified

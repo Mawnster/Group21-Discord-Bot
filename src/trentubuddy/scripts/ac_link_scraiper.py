@@ -8,14 +8,20 @@ import os
 
 #convert the array to a dict once formatted with key value pairs to save to a JSON file
 results_dict = {}
-json_filepath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data")
+json_filepath = os.getcwd() + "/data/ac_link.json"
 
 url = 'https://www.trentu.ca/registrar/academic-calendar/undergraduate-calendar'
 
 def Store_Data(dict_to_save):
-    with open(json_filepath + "/ac_link.json", "w") as file:
-        json.dump(dict_to_save, file, indent=4)
-
+    try:
+        with open(json_filepath, "w") as file:
+            json.dump(dict_to_save, file, indent=4)
+            file.close()
+    except FileNotFoundError:
+        print("ac_link.json has been removed since the bot started...")
+    except:
+        print("Error dumping information from ac_link_scraiper.py")
+        
 def get_ac_link():
     #if theres an error the driver may stay open so close it.
     try:

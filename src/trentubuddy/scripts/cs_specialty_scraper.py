@@ -7,7 +7,7 @@ import json
 import os
 
 #To make more portable gets THIS files path and goes down a level to the data folder, This is the folder we want that contains specialties.json. If moved update this
-json_filepath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data")
+#json_filepath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data")
 
 results_array = []
 
@@ -28,10 +28,9 @@ all_tags = header_tags.copy()
 all_tags.update(list_tags)
 
 def Store_Data(dict_to_save):
-    os.path.dirname(os.path.realpath(__file__))
-    os.chdir(json_filepath)
-    with open(os.getcwd() + "/specialties.json", "w") as file:
+    with open(os.getcwd() + "/data/specialties.json", "w+") as file:
         json.dump(dict_to_save, file, indent=4)
+        print("DUMPED")
 
 #Initialize beautiful soup as an object of the drivers page source
 def BeautifulSoupSetup(input_driver):
@@ -72,7 +71,7 @@ def update_specialties():
         print("Error... Terminating Driver")
         driver.quit()
         return 1
-
+        
 #do nothing when imported until called
 def main():
     pass
