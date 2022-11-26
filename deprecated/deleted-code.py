@@ -22,7 +22,6 @@ async def on_message(message):
 
 """
 
-#guilds in the unlikely chance they need to be replaced
 """
 intents = discord.Intents.default()
 intents.guilds = True

@@ -62,8 +62,11 @@ async def load_bot():
         if not os.path.exists("data"):
             os.makedirs("data")
 
-        create_files(os.getcwd() + "/data/specialties.json")
-        create_files(os.getcwd() + "/data/ac_link.json")
+        try:
+            create_files(os.getcwd() + "/data/specialties.json")
+            create_files(os.getcwd() + "/data/ac_link.json")
+        except:
+            print("Error creating required files")
 
         try:
             await load_extensions(cog_path)
