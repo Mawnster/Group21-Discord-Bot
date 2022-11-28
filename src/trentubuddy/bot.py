@@ -18,7 +18,7 @@ import getpass
 #Get proper  pathing
 file_dir = os.path.dirname(__file__)
 sys.path.append(file_dir)
-
+env_file_path = file_dir + "/env/.env"
 #changes \\ to / if linux system *Windows will read / regardless but keeping code here for now*
 cog_path = os.path.dirname(os.path.realpath(__file__)) + helper.os_path_helper("\\cogs")
 
@@ -56,25 +56,17 @@ def main():
 #To be called from main.py to execute this script.
 async def load_bot():
     async with bot:
-        token_reset_flag = 1
-        env_file_path = file_dir + "/env/.env"
-        
-        if not os.path.exists("data"):
-            os.makedirs("data")
-
+        token_reset_flag = 1        
+        json_files = ["specialties.json", "ac_link.json"]
         try:
-            create_files(os.getcwd() + "/data/specialties.json")
-            create_files(os.getcwd() + "/data/ac_link.json")
-        except:
-            print("Error creating required files")
+            if not os.path.exists("data"):
+                os.makedirs("data")
 
-        try:
+            for new_file in json_files:
+                with open("data/" + new_file, "w+"): pass
+
             await load_extensions(cog_path)
-        except:
-            print("Could not load the extensions...")
-            return -1
 
-        try:
             if os.path.exists(env_file_path):
                 user_input = input("Would you like to use the existing token?...(Y/n)")
                 if (user_input.lower() == "y"):                    
@@ -87,14 +79,14 @@ async def load_bot():
                     env_file.close()
             load_dotenv(env_file_path)            
             TOKEN = os.getenv('DISCORD_TOKEN')           
-        except:
-            print("Could not fetch the enviornment variable...")
-            return -1
 
-        try:
             await bot.start(TOKEN)
+            
+        except discord.errors.LoginFailure:
+            print("Token was invalid, Please restart and enter a valid token...")
+            return -1
         except:
-            print("Could not load the bot with the given token...")
+            print("Error with bot startup", sys.exc_info()[0])
             return -1
 
 if __name__ == "__main__":

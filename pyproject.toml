@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "trentubuddy"
-version = "0.3.0"
+version = "0.3.31"
 dependencies = [
     "discord >= 2.0.0",
     "python-dotenv >= 0.21.0",

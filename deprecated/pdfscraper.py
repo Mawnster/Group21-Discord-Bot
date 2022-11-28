@@ -1,3 +1,5 @@
+#Deprecated due to complexity of parsing unstructured data at this time
+#retained to discuss experiences with unstructured data
 import PyPDF2
 import re
 import time

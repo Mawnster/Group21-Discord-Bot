@@ -1,3 +1,5 @@
+#Deprecated and redone with the use of dictonaries a better algorithms for output files, 
+#retained for comparison
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from selenium.webdriver.firefox.service import Service as FirefoxService
