@@ -9,9 +9,11 @@
 #   easy installation by only requiring a discord token to execute. The discord token
 #   is saved in plain text, use appropriate security if needed. 
 #
-# changelog:    11/10/2022 First iteration complete fully executable locally
+# changelog:    10/20/2022 First conception and implementations
+#               11/10/2022 First iteration complete fully executable locally
 #               11/21/2022 Prepared for PYPI changed all pathing and implemented file creation
 #               11/27/2022 implemented better error handling on inital creation and execution
+#               11/29/2022 Finalized main scrips and formatting, Deployed fully on PYPI
 
 from .scripts import helpers as helper
 import discord
@@ -50,10 +52,6 @@ async def load_extensions(extensions_path, folder_path = "" ):
                 await bot.load_extension(f'{folder_path}.{filename[:-3]}')    
     except:
         return -1    
-
-#This is the new way to do bot.run(TOKEN) by loading the cogs first.
-def main():
-    asyncio.run(load_bot())
     
 #To be called from main.py to execute this script.
 async def load_bot():
@@ -93,6 +91,9 @@ async def load_bot():
         except:
             print("Error with bot startup", sys.exc_info()[0])
             return -1
+
+def main():
+    asyncio.run(load_bot())
 
 if __name__ == "__main__":
     asyncio.run(main())
