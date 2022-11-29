@@ -21,6 +21,8 @@ Full-time Studies including
 
 ## I'm learning
 
+C/C++ for Algorithms
+
 Web Development
   - Next.js
   - MongoDB
