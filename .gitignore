@@ -52,7 +52,7 @@ geckodriver.log*
 backlog.txt
 
 #data file
-./data
+/data
 
 #Package Details
 ./build
