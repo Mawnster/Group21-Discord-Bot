@@ -12,10 +12,12 @@ Coming from Automotive sales, I have learned quite a bit, but never quite scratc
 ## I'm currently working on:
 
 Full-time Studies including
+  - Obtaining an Internship
   - Algorithms 2 and Advanced Algorithms
   - Operating Systems
   - Software Architecture
   - Networking
+
 
 ## I'm learning
 
