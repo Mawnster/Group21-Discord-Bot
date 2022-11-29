@@ -11,13 +11,18 @@ class Booking(commands.Cog):
 
     #tprent bookings
     ## fix this it looks like shit
-    @commands.group(name="book", invoke_without_command=True)
+    @commands.group(name="book", invoke_without_command=True, case_insensitive=True)
     async def book(self, ctx):
-        await ctx.send("**Booking Options**\nHere are the available commands.\n`advising:` Book an appointment with academic advising\n`skills:` Book an appointment with academic skills \
-    \n`healthinmotion:` Book an appointment with TrentU Health in Motion at the Athletics Center\
-    \n`room:` Book a single pod in Bata Library or a group room\n`travel:` Book an appointment with Trent International\
-    \n`career:` Book an appointment with Careerspace\n`peer:` Book an appointment with peer support\
-    \n`coop:` Book an appointment with your Co-Op Coordinator")
+        embed=discord.Embed(title="Booking commands, !book _", description="\
+        `Advising` Book appointment with Academic Advising\n\
+        `Healthinotion` Appointment with Health in Mortion at Athletics Center\n\
+        `Skills` Appointment with academic skills\n\
+        `Coop` Appointment with the Co-op Department\n\
+        `Peer` Appointment with a peer Supporter\n\
+        `Career` Appointment with Careerspace\n\
+        `International` Appointment with Trent International\n\
+        `Room` Book a single or group study Pod", color=0x3a8d34)        
+        await ctx.send(embed=embed)
 
     @book.command()
     async def advising(self, ctx):

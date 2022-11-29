@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "trentubuddy"
-version = "1.0.0"
+version = "1.0.2"
 authors = [ 
     {name="Zachary Bricknell"}
 ]
@@ -31,7 +31,6 @@ classifiers = [
 
 [project.urls]
 "Homepage" = "https://github.com/Zachary-Bricknell/TrentUBuddy"
-"Linkedin" = "https://www.linkedin.com/in/zachary-bricknell/"
 
 [project.scripts]
 trentubuddy = "trentubuddy.bot:main"

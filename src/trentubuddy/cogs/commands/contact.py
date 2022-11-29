@@ -12,14 +12,25 @@ class Contact(commands.Cog):
 
     @commands.group(name="contact", invoke_without_command=True, case_insensitive=True, pass_context=True)
     async def contact(self, ctx):
-        await ctx.send("**COIS Faculty Members\nList Updated: November 08/22\n\
-**To access information, please type prefix '!' followed by contact and the LAST name of the\
- faculty member you wish to reach\n`Available Options:`\n\
-Richard HURLEY\nWenying FENG\nBrian PATRICK\nSabine McCONNELL\nOmar ALAM\n\
-Fadi ALZHOURI\nBrian SRIVASTAVA\nSofie ANDREOU\nJacques BELAND\nBrian HIRCOCK\n\
-Jamie MITCHELL\nPeter NORTHROP\nStephen REGOCZEI\nNancy SMITH\nGraeme YOUNG\nElissa ONIELL\nOther")
-
-# creds to patrick haugh on stackoverflow
+        embed=discord.Embed(title="!contact <Lastname> - for more details", description="\n\
+        `Richard HURLEY`\n\
+        `Wenying FENG`\n\
+        `Brian PATRICK`\n\
+        `Sabine McCONNELL`\n\
+        `Omar ALAM`\n\
+        `Fadi ALZHOURI`\n\
+        `Brian SRIVASTAVA`\n\
+        `Sofie ANDREOU`\n\
+        `Jacques BELAND`\n\
+        `Brian HIRCOCK`\n\
+        `Jamie MITCHELL`\n\
+        `Peter NORTHROP`\n\
+        `Stephen REGOCZEI`\n\
+        `Nancy SMITH`\n\
+        `Graeme YOUNG`\n\
+        `Elissa ONIELL`\n\
+        `Other`", color=0x3a8d34)       
+        await ctx.send(embed=embed)
 
     @contact.command()
     async def Hurley(self, ctx):

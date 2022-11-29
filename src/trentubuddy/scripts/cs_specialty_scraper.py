@@ -30,7 +30,6 @@ all_tags.update(list_tags)
 def Store_Data(dict_to_save):
     with open(os.getcwd() + "/data/specialties.json", "w+") as file:
         json.dump(dict_to_save, file, indent=4)
-        print("DUMPED")
 
 #Initialize beautiful soup as an object of the drivers page source
 def BeautifulSoupSetup(input_driver):

@@ -8,10 +8,7 @@ import json
 from scripts import helpers as helper
 from scripts import cs_specialty_scraper as cs_specialties
 from scripts import ac_link_scraiper as academic_calendar
-import time
-from pathlib import Path
-import psutil
-import time
+
 file_dir = os.path.dirname(__file__)
 sys.path.append(file_dir)
 path_to_data = os.getcwd()
@@ -25,10 +22,11 @@ class Specialties(commands.Cog):
     def __init__(self, bot):
         self.bot = bot   
 
+    
+
     @commands.command(case_insensitive=True, aliases=["sp"])
-    async def specialties(self, ctx):          
+    async def specialties(self, ctx):         
         file_age = helper.SinceLastModified(specialties_path)  
-        print(file_age) 
         if((file_age > 10) | (file_age <0)):
             await ctx.send("Let me get that information for you...")
             if cs_specialties.update_specialties() != 0:

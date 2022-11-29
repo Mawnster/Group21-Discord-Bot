@@ -51,6 +51,9 @@ VirtualPython
 geckodriver.log*
 backlog.txt
 
+#data file
+./data
+
 #Package Details
 ./build
 README-PYPI.md
